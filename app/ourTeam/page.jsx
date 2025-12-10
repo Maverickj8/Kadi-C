@@ -79,7 +79,7 @@ export default function OurTeamPage() {
 
   return (
     <>
-      <div className="min-h-screen relative overflow-hidden pt-5">
+      <div className="min-h-screen relative overflow-hidden pt-5 sm:pt-20">
         {/* Background with split design */}
         <div className="absolute inset-0">
           {/* Top green section */}
@@ -415,7 +415,7 @@ export default function OurTeamPage() {
                     onClick={() => goToSlide(index)}
                     className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
                       currentIndex === index
-                        ? "bg-red-600 w-6 sm:w-8"
+                        ? "bg-green-600 w-6 sm:w-8"
                         : "bg-gray-300 hover:bg-gray-400"
                     }`}
                     aria-label={`Go to slide ${index + 1}`}

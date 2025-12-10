@@ -1,6 +1,6 @@
 export default function AboutSection() {
   return (
-    <section className="bg-[#111] text-white py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-12 h-screen">
+    <section className="bg-[#111] text-white py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-12 h-auto">
       {/* Left: Stacked Images */}
       <div data-aos="fade-left" className="relative flex flex-col items-center md:w-1/2 space-y-4">
         <div className="absolute -top-10 -left-8 w-40 h-40 rounded-lg overflow-hidden border-4 border-green-600">
@@ -15,7 +15,7 @@ export default function AboutSection() {
       </div>
 
       {/* Right: Text Content */}
-      <div data-aos="fade-right" className="md:w-1/2 space-y-6 text-gray-200">
+      <div data-aos="fade-right" className="md:w-1/2 sm:pb-5 space-y-6 text-gray-200">
         <h2 className="text-3xl text-gray-100/60 font-bold">About Us</h2>
         <h3 className="text-2xl font-bold leading-snug">
           Innovative organic{" "}

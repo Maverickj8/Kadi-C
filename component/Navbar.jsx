@@ -42,12 +42,13 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-green-900/95 p-6 flex flex-col space-y-4 md:hidden">
-          <a href="#" className="hover:text-green-300">About</a>
-          <a href="#" className="hover:text-green-300">Services</a>
-          <a href="#" className="hover:text-green-300">Projects</a>
-          <a href="#" className="hover:text-green-300">Team</a>
+          <a href="/" className="hover:text-green-300">Home</a>
+          <a href="/about" className="hover:text-green-300">About</a>
+          <a href="/products" className="hover:text-green-300">Services</a>
+          <a href="/projects" className="hover:text-green-300">Projects</a>
+          <a href="team" className="hover:text-green-300">Team</a>
           <a
-            href="#"
+            href="/contact"
             className="bg-green-700 hover:bg-green-600 px-6 py-2 rounded-full text-white font-semibold"
           >
             Contact Us

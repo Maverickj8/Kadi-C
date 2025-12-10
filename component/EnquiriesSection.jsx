@@ -7,7 +7,7 @@ export default function EnquiriesSection() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <section className="relative w-full h-[300px] md:h-[350px] lg:h-[400px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[300px] md:h-[350px] lg:h-[400px] flex sm:flex-col items-center justify-center overflow-hidden">
       {/* BACKGROUND IMAGE */}
       <Image
         src="/images/enquire.png" // replace with your own image path
@@ -21,7 +21,7 @@ export default function EnquiriesSection() {
       <div className="absolute inset-0 bg-green-900/80"></div>
 
       {/* CONTENT */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-6xl px-6 md:px-16">
+      <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between w-full max-w-6xl px-6 md:px-16 h-auto">
         {/* TEXT */}
         <h2 className="text-white text-3xl md:text-4xl font-semibold font-[Georgia] mb-6 md:mb-0 text-center md:text-left">
           For Enquiries
