@@ -324,7 +324,7 @@ function DetailPage({ product, onBack }) {
             {/* Department Section */}
             <div className="bg-white rounded-lg shadow-md p-4 md:p-6">
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 pb-3 border-b-2 border-gray-900">
-                DEPARTMENT
+                OTHER SERVICES
               </h3>
               <ul className="space-y-2 md:space-y-3">
                 {departments.map((dept, index) => (
@@ -340,7 +340,7 @@ function DetailPage({ product, onBack }) {
             {/* Download Section */}
             <div className="bg-white rounded-lg shadow-md p-4 md:p-6">
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 pb-3 border-b-2 border-gray-900">
-                DOWNLOAD
+                What Next
               </h3>
               <div className="space-y-3">
                 <Link href={'/'} >

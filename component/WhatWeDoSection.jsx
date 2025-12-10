@@ -165,7 +165,7 @@ export const products = [
     },
   },
   {
-    id: "shrimps-prawns",
+    id: "Hard wood Charcoal",
     title: "Shrimps & Prawns",
     subtitle: "Shrimps & Prawns Export",
     detailTitle: "Shrimps & Prawns Supply & Export From Nigeria",
