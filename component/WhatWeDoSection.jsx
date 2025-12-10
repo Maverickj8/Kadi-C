@@ -166,8 +166,8 @@ export const products = [
   },
   {
     id: "Hard wood Charcoal",
-    title: "Shrimps & Prawns",
-    subtitle: "Shrimps & Prawns Export",
+    title: "Hard wood Charcoal",
+    subtitle: "Hard wood Charcoal Export",
     detailTitle: "Shrimps & Prawns Supply & Export From Nigeria",
     detailSubtitle: "We are shrimps and prawns exporters in Nigeria",
     description:
