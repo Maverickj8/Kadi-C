@@ -19,7 +19,7 @@ export default function Home() {
   const handleProductClick = (product) => {
     // 3. Navigate to a dynamic route using the product ID
     // This assumes you have a folder structure like: app/product/[id]/page.js
-    router.push(`/products`);
+    router.push(`/product/[id]/page.jsx`);
   };
 
   return (
