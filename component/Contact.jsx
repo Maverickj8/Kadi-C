@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Instagram, Facebook, Twitter , Youtube } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
+import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -47,17 +48,16 @@ export default function ContactPage() {
       link: '#map'
     },
     {
-      icon: Instagram,
+      icon: FaInstagram,
       label: 'Instagram',
       value: 'yourid.com',
-      link: 'https://instagram.com'
+      link: 'https://www.instagram.com/kadi_c_farms?igsh=bTk5emJ5bWF3dnk1'
     }
   ];
 
   const socialMedia = [
-    { icon: Facebook, link: 'https://facebook.com' },
-    { icon: Twitter, link: 'https://twitter.com' },
-    { icon: Youtube, link: 'https://youtube.com' }
+    { icon: FaFacebook, link: 'https://www.facebook.com/profile.php?id=61580422739746' },
+    { icon: FaYoutube, link: 'https://youtube.com/@kadi-cfarms?si=U5vzKlSwoTFFGKoE' }
   ];
 
   return (
