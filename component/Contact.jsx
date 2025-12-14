@@ -1,63 +1,86 @@
-'use client'
-import { useState } from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
-import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
+"use client";
+import { useState } from "react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { FaFacebook, FaYoutube } from "react-icons/fa";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    email: '',
-    name: '',
-    phone: '',
-    message: ''
+    email: "",
+    name: "",
+    phone: "",
+    message: "",
   });
 
-  // Address for the map - change this to update the map location
-  const address = "No: 24 Nnamdi Azikiwe road. Opposite road 12 junction shop number 6, Trans Ekulu, Enugu State";
-  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+  // WhatsApp number
+  const whatsappNumber = "+2347025676306"; // Replace with your WhatsApp number
+
+  // Address for the map
+  const address =
+    "No: 24 Nnamdi Azikiwe road. Opposite road 12 junction shop number 6, Trans Ekulu, Enugu State";
+  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(
+    address
+  )}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    alert('Message sent successfully!');
-    setFormData({ email: '', name: '', phone: '', message: '' });
+    // Construct message
+    const message = `
+Hello! My name is ${formData.name}.
+Email: ${formData.email}
+Phone: ${formData.phone}
+Message: ${formData.message}
+    `;
+    const encodedMessage = encodeURIComponent(message);
+
+    // WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber.replace(
+      /[^\d]/g,
+      ""
+    )}?text=${encodedMessage}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappURL, "_blank");
+
+    // Reset form
+    setFormData({ email: "", name: "", phone: "", message: "" });
   };
 
   const contactInfo = [
     {
       icon: Phone,
-      label: 'Phone',
-      value: '+2347025676306',
-      link: '+2347025676306'
+      label: "Phone",
+      value: "+2347025676306",
+      link: "tel:+2347025676306",
     },
     {
       icon: Mail,
-      label: 'Email',
-      value: 'Kadi-c@gmail.com',
-      link: 'Kadi-C.com'
+      label: "Email",
+      value: "Kadi-c@gmail.com",
+      link: "mailto:Kadi-c@gmail.com",
     },
     {
       icon: MapPin,
-      label: 'Address',
-      value: 'No: 24 Nnamdi Azikiwe road. Opposite road 12 junction shop number 6, Trans Ekulu, Enugu State',
-      link: '#map'
+      label: "Address",
+      value: address,
+      link: "#map",
     },
-    {
-      icon: FaInstagram,
-      label: 'Instagram',
-      value: 'yourid.com',
-      link: 'https://www.instagram.com/kadi_c_farms?igsh=bTk5emJ5bWF3dnk1'
-    }
   ];
 
   const socialMedia = [
-    { icon: FaFacebook, link: 'https://www.facebook.com/profile.php?id=61580422739746' },
-    { icon: FaYoutube, link: 'https://youtube.com/@kadi-cfarms?si=U5vzKlSwoTFFGKoE' }
+    {
+      icon: FaFacebook,
+      link: "https://www.facebook.com/profile.php?id=61580422739746",
+    },
+    {
+      icon: FaYoutube,
+      link: "https://youtube.com/@kadi-cfarms?si=U5vzKlSwoTFFGKoE",
+    },
   ];
 
   return (
@@ -72,12 +95,17 @@ export default function ContactPage() {
                 Get In Touch
               </h1>
               <p className="text-green-950/40 leading-relaxed">
-                We’re here to support you. Whether you have questions, feedback, or need assistance, our team is ready to help. Reach out to us anytime.
+                We’re here to support you. Whether you have questions, feedback,
+                or need assistance, our team is ready to help. Reach out to us
+                anytime.
               </p>
             </div>
 
             {/* Contact Cards */}
-            <div data-aos="zoom-in-left" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              data-aos="zoom-in-left"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
               {contactInfo.map((item, index) => (
                 <a
                   key={index}
@@ -100,26 +128,6 @@ export default function ContactPage() {
                 </a>
               ))}
             </div>
-
-            {/* Social Media */}
-            <div data-aos="zoom-in">
-              <h3 className="text-sm font-semibold text-green-900 mb-3">
-                Social Media
-              </h3>
-              <div className="flex space-x-4">
-                {socialMedia.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white p-3 rounded-lg shadow-sm hover:shadow-md transform hover:scale-90 transition-all duration-300"
-                  >
-                    <social.icon size={20} className="text-green-700" />
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right Side - Contact Form */}
@@ -128,7 +136,10 @@ export default function ContactPage() {
               {/* Email and Name Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-green-950 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-green-950 mb-2"
+                  >
                     Email
                   </label>
                   <input
@@ -137,12 +148,15 @@ export default function ContactPage() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 text-black bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all"
                     placeholder="your@email.com"
                   />
                 </div>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-green-950 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-green-950 mb-2"
+                  >
                     Name
                   </label>
                   <input
@@ -151,7 +165,7 @@ export default function ContactPage() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 text-black bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all"
                     placeholder="Your name"
                   />
                 </div>
@@ -159,7 +173,10 @@ export default function ContactPage() {
 
               {/* Phone */}
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-green-950 mb-2">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-green-950 mb-2"
+                >
                   Phone
                 </label>
                 <input
@@ -168,14 +185,17 @@ export default function ContactPage() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all"
-                  placeholder="+1 (555) 000-0000"
+                  className="w-full px-4 py-3 text-black bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all"
+                  placeholder="+234 000 000 0000"
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-green-950 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-green-950 mb-2"
+                >
                   Message
                 </label>
                 <textarea
@@ -184,7 +204,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 text-black py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all resize-none"
                   placeholder="Your message..."
                 ></textarea>
               </div>
@@ -194,14 +214,17 @@ export default function ContactPage() {
                 onClick={handleSubmit}
                 className="w-full sm:w-auto px-8 py-3 bg-green-800 text-white font-semibold rounded-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
               >
-                SUBMIT BUTTON
+                SEND VIA WHATSAPP
               </button>
             </div>
           </div>
         </div>
 
         {/* Map Section */}
-        <div id="map" className="w-full h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden shadow-lg">
+        <div
+          id="map"
+          className="w-full h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden shadow-lg"
+        >
           <iframe
             src={mapEmbedUrl}
             width="100%"

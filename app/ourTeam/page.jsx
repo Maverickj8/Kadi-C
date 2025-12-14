@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
 export default function OurTeamPage() {
   const [isHovered, setIsHovered] = useState(false);
@@ -22,7 +22,7 @@ export default function OurTeamPage() {
       id: 1,
       name: "Ugwuanyi Gerald Chika",
       position: "CEO",
-      image: "/images/geralds.png",
+      image: "/images/geee.png",
       bio: "Experienced leader with BSc in Pure and Industrial Chemistry and Masters in Analytical chemistry.",
       email: "geraldugwuanyi7@gmail.com",
     },
@@ -38,8 +38,8 @@ export default function OurTeamPage() {
       id: 3,
       name: "Eze Chisom Juliet",
       position: "CTO",
-      image: "/images/chisom.png",
-      bio: "Software Engineering expert with extensive background in Web development an maintenance.",
+      image: "/images/chisompn.png",
+      bio: "Software Engineering expert with extensive background in Web development and maintenance.",
       email: "chisomalbert30@gmail,com",
     },
   ];
@@ -79,7 +79,7 @@ export default function OurTeamPage() {
 
   return (
     <>
-      <div className="min-h-screen relative overflow-hidden pt-5 sm:pt-20">
+      <div className="min-h-screen relative overflow-hidden sm:pt-20">
         {/* Background with split design */}
         <div className="absolute inset-0">
           {/* Top green section */}
@@ -137,7 +137,10 @@ export default function OurTeamPage() {
             </div>
 
             {/* Right Column - Content */}
-            <div data-aos="fade-left" className="space-y-6 sm:space-y-8 lg:pt-0">
+            <div
+              data-aos="fade-left"
+              className="space-y-6 sm:space-y-8 lg:pt-0"
+            >
               {/* Description Paragraphs */}
               <div className="space-y-4 sm:space-y-5 text-sm sm:text-base lg:text-base leading-relaxed">
                 <p className="text-gray-900">
@@ -160,12 +163,6 @@ export default function OurTeamPage() {
 
               {/* Founder Section */}
               <div className="inline-block">
-                <h2
-                  className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-1"
-                  style={{ fontFamily: "cursive" }}
-                >
-                  Gerald Chika
-                </h2>
                 <p className="text-black font-semibold text-sm sm:text-base">
                   Gerald Chika
                 </p>
@@ -217,9 +214,11 @@ export default function OurTeamPage() {
 
               {/* Contact Button */}
               <div className="pt-4 sm:pt-6">
-                <button className="bg-green-700 hover:bg-green-800 text-white font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-sm sm:text-base">
-                  Contact Us
-                </button>
+                <Link href={"/contact"}>
+                  <button className="bg-green-700 hover:bg-green-800 text-white font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-sm sm:text-base">
+                    Contact Us
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -337,18 +336,6 @@ export default function OurTeamPage() {
                                       {member.email}
                                     </span>
                                   </div>
-                                  <div className="flex items-center justify-center gap-2">
-                                    <svg
-                                      className="w-5 h-5"
-                                      fill="currentColor"
-                                      viewBox="0 0 20 20"
-                                    >
-                                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                                    </svg>
-                                    <span className="text-white/90">
-                                      {member.phone}
-                                    </span>
-                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -427,7 +414,15 @@ export default function OurTeamPage() {
             {/* Description Text */}
             <div className="mt-12 sm:mt-16 max-w-5xl mx-auto">
               <p className="text-center text-gray-600 text-sm sm:text-base leading-relaxed px-4">
-                "Our Executive Team is responsible for guiding Kadi-C’s strategy, financial growth, and talent development, all while upholding our commitment to nourishing the world responsibly. Bringing together diverse expertise from within and outside the industry, these leaders have a proven history of delivering results. Their collective goal is to establish Kadi-C as the most trusted partner in food and agriculture."
+                We Drive Kadi-C’s strategic direction and long-term vision Lead
+                financial growth and ensure sustainable profitability Develop,
+                empower, and retain top talent across the organization Uphold
+                and advance Kadi-C’s commitment to responsible global
+                nourishment Leverage diverse industry and cross-industry
+                expertise to deliver measurable results Strengthen partnerships
+                and operational excellence across food and agriculture Position
+                Kadi-C as the most trusted partner in the food and agriculture
+                value chain
               </p>
             </div>
           </div>

@@ -13,7 +13,7 @@ const BoardOfDirectorsPage = () => {
       id: 1,
       name: "Ugwuanyi Gerald Chika",
       position: "CEO",
-      image: "/images/geralds.png",
+      image: "/images/geee.png",
       bio: "Experienced leader with BSc in Pure and Industrial Chemistry",
       email: "geraldugwuanyi7@gmail.com",
       phone: "+2349034307853",
@@ -31,8 +31,8 @@ const BoardOfDirectorsPage = () => {
       id: 3,
       name: "Eze Chisom Juliet",
       position: "CTO",
-      image: "/images/chisom.png",
-      bio: "Software Engineering expert with extensive background in Web development an maintainance",
+      image: "/images/chisompn.png",
+      bio: "Software Engineering expert with extensive background in Web development and maintainance.",
       email: "chisomalbert30@gmail,com",
       phone: "+2348138931168",
     },
@@ -216,18 +216,7 @@ const BoardOfDirectorsPage = () => {
                                     {member.email}
                                   </span>
                                 </div>
-                                <div className="flex items-center justify-center gap-2">
-                                  <svg
-                                    className="w-5 h-5"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                  >
-                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                                  </svg>
-                                  <span className="text-white/90">
-                                    {member.phone}
-                                  </span>
-                                </div>
+                                
                               </div>
                             </div>
                           </div>
@@ -306,7 +295,7 @@ const BoardOfDirectorsPage = () => {
           {/* Description Text */}
           <div className="mt-12 sm:mt-16 max-w-5xl mx-auto">
             <p className="text-center text-gray-600 text-sm sm:text-base leading-relaxed px-4">
-              KADI C FARMS will assemble a team of experienced agricultural
+              At KADI C FARMS we assemble a team of experienced agricultural
               experts who are passionate about organic farming and sustainable
               practices. They will play a vital role in developing and
               implementing our farming strategy. Our agricultural team will
