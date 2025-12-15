@@ -414,7 +414,7 @@ export default function OurTeamPage() {
             {/* Description Text */}
             <div className="mt-12 sm:mt-16 max-w-5xl mx-auto">
               <p className="text-center text-gray-600 text-sm sm:text-base leading-relaxed px-4">
-                Our experienced leadership team brings together over 50 years of
+                Our experienced leadership team brings together years of
                 combined experience in agriculture, international trade, and
                 business management. The team includes industry experts in
                 organic farming, quality control specialists, and international

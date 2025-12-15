@@ -282,7 +282,7 @@ const BoardOfDirectorsPage = () => {
                   onClick={() => goToSlide(index)}
                   className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
                     currentIndex === index
-                      ? "bg-red-600 w-6 sm:w-8"
+                      ? "bg-green-600 w-6 sm:w-8"
                       : "bg-gray-300 hover:bg-gray-400"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
@@ -294,10 +294,10 @@ const BoardOfDirectorsPage = () => {
           {/* Description Text */}
           <div className="mt-12 sm:mt-16 max-w-5xl mx-auto">
             <p className="text-center text-gray-600 text-sm sm:text-base leading-relaxed px-4">
-              Our experienced leadership team brings together over 50 years of
-              combined experience in agriculture, international trade, and
-              business management. The team includes industry experts in organic
-              farming, quality control specialists, and international trade
+              Our experienced leadership team brings together years of combined
+              experience in agriculture, international trade, and business
+              management. The team includes industry experts in organic farming,
+              quality control specialists, and international trade
               professionals, ensuring comprehensive oversight of all operations.
             </p>
           </div>
