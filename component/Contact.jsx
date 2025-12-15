@@ -11,10 +11,8 @@ export default function ContactPage() {
     message: "",
   });
 
-  // WhatsApp number
   const whatsappNumber = "+2347025676306"; // Replace with your WhatsApp number
 
-  // Address for the map
   const address =
     "No: 24 Nnamdi Azikiwe road. Opposite road 12 junction shop number 6, Trans Ekulu, Enugu State";
   const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(
@@ -29,48 +27,43 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = () => {
-    // Construct message
+  // Email handler
+  const handleEmailSubmit = () => {
+    const mailtoLink = `mailto:info@kadi-c.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(
+      `Hello,\n\nMy name is ${formData.name}.\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+
+    window.location.href = mailtoLink;
+
+    setFormData({ email: "", name: "", subject: "", message: "" });
+  };
+
+  // WhatsApp handler
+  const handleWhatsAppSubmit = () => {
     const message = `
 Hello! My name is ${formData.name}.
 Email: ${formData.email}
-Phone: ${formData.subject}
+Phone/Subject: ${formData.subject}
 Message: ${formData.message}
     `;
     const encodedMessage = encodeURIComponent(message);
 
-    // WhatsApp URL
     const whatsappURL = `https://wa.me/${whatsappNumber.replace(
       /[^\d]/g,
       ""
     )}?text=${encodedMessage}`;
 
-    // Open WhatsApp in a new tab
     window.open(whatsappURL, "_blank");
 
-    // Reset form
     setFormData({ email: "", name: "", subject: "", message: "" });
   };
 
   const orderInfo = [
-    {
-      icon: Phone,
-      label: "phone",
-      value: "09028688742",
-      link: "",
-    },
-    {
-      icon: Mail,
-      label: "Email",
-      value: "Kadi-c@gmail.com",
-      link: "mailto:Kadi-c@gmail.com",
-    },
-    {
-      icon: MapPin,
-      label: "Address",
-      value: address,
-      link: "#map",
-    },
+    { icon: Phone, label: "Phone", value: "09028688742", link: "" },
+    { icon: Mail, label: "Email", value: "info@kadi-c.com", link: "mailto:info@kadi-c.com" },
+    { icon: MapPin, label: "Address", value: address, link: "#map" },
   ];
 
   return (
@@ -85,23 +78,19 @@ Message: ${formData.message}
                 Get In Touch
               </h1>
               <p className="text-green-950/40 leading-relaxed">
-                We Are Ready To Handle Your Request
+                We are ready to handle your request.
               </p>
-              <p className=" text-green-950/40 leading-relaxed ">
-                Enter your details and we will be in touch to discuss your
-                project
+              <p className="text-green-950/40 leading-relaxed">
+                Enter your details and we will be in touch to discuss your project.
               </p>
             </div>
 
             {/* Contact Cards */}
-            <div
-              data-aos="zoom-in-left"
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-            >
+            <div data-aos="zoom-in-left" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {orderInfo.map((item, index) => (
                 <a
                   key={index}
-                  href={item.link}
+                  href={item.link || "#"}
                   className="group bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <div className="flex items-start space-x-4">
@@ -109,12 +98,8 @@ Message: ${formData.message}
                       <item.icon size={24} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-green-900 mb-1">
-                        {item.label}
-                      </h3>
-                      <p className="text-green-950/40 text-sm break-words">
-                        {item.value}
-                      </p>
+                      <h3 className="font-semibold text-green-900 mb-1">{item.label}</h3>
+                      <p className="text-green-950/40 text-sm break-words">{item.value}</p>
                     </div>
                   </div>
                 </a>
@@ -123,15 +108,12 @@ Message: ${formData.message}
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="bg-gray-100 p-8 sm:p-10 rounded-lg">
+          <div className="bg-gray-100 p-8 sm:p-10 rounded-lg shadow-md">
             <div className="space-y-6">
-              {/* Email and Name Row */}
+              {/* Email and Name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-green-950 mb-2"
-                  >
+                  <label htmlFor="email" className="block text-sm font-medium text-green-950 mb-2">
                     Email
                   </label>
                   <input
@@ -145,10 +127,7 @@ Message: ${formData.message}
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-green-950 mb-2"
-                  >
+                  <label htmlFor="name" className="block text-sm font-medium text-green-950 mb-2">
                     Name
                   </label>
                   <input
@@ -163,12 +142,9 @@ Message: ${formData.message}
                 </div>
               </div>
 
-              {/* Phone */}
+              {/* Subject */}
               <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-green-950 mb-2"
-                >
+                <label htmlFor="subject" className="block text-sm font-medium text-green-950 mb-2">
                   Subject
                 </label>
                 <input
@@ -178,16 +154,13 @@ Message: ${formData.message}
                   value={formData.subject}
                   onChange={handleChange}
                   className="w-full px-4 py-3 text-black bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all"
-                  placeholder="request subject"
+                  placeholder="Request subject"
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-green-950 mb-2"
-                >
+                <label htmlFor="message" className="block text-sm font-medium text-green-950 mb-2">
                   Message
                 </label>
                 <textarea
@@ -196,18 +169,27 @@ Message: ${formData.message}
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className="w-full px-4 text-black py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 text-black bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all resize-none"
                   placeholder="Your message..."
                 ></textarea>
               </div>
 
-              {/* Submit Button */}
-              <button
-                onClick={handleSubmit}
-                className="w-full sm:w-auto px-8 py-3 bg-green-800 text-white font-semibold rounded-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
-              >
-                SEND MESSAGE
-              </button>
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-4">
+                <button
+                  onClick={handleEmailSubmit}
+                  className="w-full sm:w-auto px-8 py-3 bg-green-800 text-white font-semibold rounded-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
+                >
+                  SEND AN EMAIL
+                </button>
+
+                <button
+                  onClick={handleWhatsAppSubmit}
+                  className="w-full sm:w-auto px-8 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-400 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
+                >
+                  WHATSAPP
+                </button>
+              </div>
             </div>
           </div>
         </div>
