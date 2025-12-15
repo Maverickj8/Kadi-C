@@ -61,7 +61,7 @@ Message: ${formData.message}
   };
 
   const orderInfo = [
-    { icon: Phone, label: "Phone", value: "09028688742", link: "" },
+    { icon: Phone, label: "Phone", value: "+2349028688742", link: "" },
     { icon: Mail, label: "Email", value: "info@kadi-c.com", link: "mailto:info@kadi-c.com" },
     { icon: MapPin, label: "Address", value: address, link: "#map" },
   ];
