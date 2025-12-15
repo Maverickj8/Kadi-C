@@ -28,7 +28,7 @@ export default function OurTeamPage() {
     },
     {
       id: 2,
-      name: "Odoh Nnabuike Alexander",
+      name: "Ugwu Blessing Chinyere ",
       position: "CFO",
       image: "/images/blessings.jpg",
       bio: "Financial expert with extensive background in corporate finance and investment strategy.",
@@ -414,15 +414,12 @@ export default function OurTeamPage() {
             {/* Description Text */}
             <div className="mt-12 sm:mt-16 max-w-5xl mx-auto">
               <p className="text-center text-gray-600 text-sm sm:text-base leading-relaxed px-4">
-                We Drive Kadi-C’s strategic direction and long-term vision Lead
-                financial growth and ensure sustainable profitability Develop,
-                empower, and retain top talent across the organization Uphold
-                and advance Kadi-C’s commitment to responsible global
-                nourishment Leverage diverse industry and cross-industry
-                expertise to deliver measurable results Strengthen partnerships
-                and operational excellence across food and agriculture Position
-                Kadi-C as the most trusted partner in the food and agriculture
-                value chain
+                Our experienced leadership team brings together over 50 years of
+                combined experience in agriculture, international trade, and
+                business management. The team includes industry experts in
+                organic farming, quality control specialists, and international
+                trade professionals, ensuring comprehensive oversight of all
+                operations.
               </p>
             </div>
           </div>

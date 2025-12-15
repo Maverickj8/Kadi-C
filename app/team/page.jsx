@@ -20,7 +20,7 @@ const BoardOfDirectorsPage = () => {
     },
     {
       id: 2,
-      name: "Odoh Nnabuike Alexander",
+      name: "Ugwu Blessing Chinyere",
       position: "CFO",
       image: "/images/blessings.jpg",
       bio: "Financial expert with extensive background in corporate finance and investment strategy.",
@@ -216,7 +216,6 @@ const BoardOfDirectorsPage = () => {
                                     {member.email}
                                   </span>
                                 </div>
-                                
                               </div>
                             </div>
                           </div>
@@ -295,14 +294,11 @@ const BoardOfDirectorsPage = () => {
           {/* Description Text */}
           <div className="mt-12 sm:mt-16 max-w-5xl mx-auto">
             <p className="text-center text-gray-600 text-sm sm:text-base leading-relaxed px-4">
-              At KADI C FARMS we assemble a team of experienced agricultural
-              experts who are passionate about organic farming and sustainable
-              practices. They will play a vital role in developing and
-              implementing our farming strategy. Our agricultural team will
-              include specialists in bee farming, crop management, and organic
-              certification, ensuring we maintain the highest standards of
-              organic production. These experts will also provide training and
-              guidance to local farmers in our network
+              Our experienced leadership team brings together over 50 years of
+              combined experience in agriculture, international trade, and
+              business management. The team includes industry experts in organic
+              farming, quality control specialists, and international trade
+              professionals, ensuring comprehensive oversight of all operations.
             </p>
           </div>
         </div>

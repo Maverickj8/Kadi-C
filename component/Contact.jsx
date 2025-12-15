@@ -7,7 +7,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     email: "",
     name: "",
-    phone: "",
+    subject: "",
     message: "",
   });
 
@@ -22,10 +22,11 @@ export default function ContactPage() {
   )}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = () => {
@@ -33,7 +34,7 @@ export default function ContactPage() {
     const message = `
 Hello! My name is ${formData.name}.
 Email: ${formData.email}
-Phone: ${formData.phone}
+Phone: ${formData.subject}
 Message: ${formData.message}
     `;
     const encodedMessage = encodeURIComponent(message);
@@ -48,15 +49,15 @@ Message: ${formData.message}
     window.open(whatsappURL, "_blank");
 
     // Reset form
-    setFormData({ email: "", name: "", phone: "", message: "" });
+    setFormData({ email: "", name: "", subject: "", message: "" });
   };
 
-  const contactInfo = [
+  const orderInfo = [
     {
       icon: Phone,
-      label: "Phone",
-      value: "+2347025676306",
-      link: "tel:+2347025676306",
+      label: "phone",
+      value: "09028688742",
+      link: "",
     },
     {
       icon: Mail,
@@ -72,17 +73,6 @@ Message: ${formData.message}
     },
   ];
 
-  const socialMedia = [
-    {
-      icon: FaFacebook,
-      link: "https://www.facebook.com/profile.php?id=61580422739746",
-    },
-    {
-      icon: FaYoutube,
-      link: "https://youtube.com/@kadi-cfarms?si=U5vzKlSwoTFFGKoE",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-gray-50 pt-25 px-5 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -95,9 +85,11 @@ Message: ${formData.message}
                 Get In Touch
               </h1>
               <p className="text-green-950/40 leading-relaxed">
-                We’re here to support you. Whether you have questions, feedback,
-                or need assistance, our team is ready to help. Reach out to us
-                anytime.
+                We Are Ready To Handle Your Request
+              </p>
+              <p className=" text-green-950/40 leading-relaxed ">
+                Enter your details and we will be in touch to discuss your
+                project
               </p>
             </div>
 
@@ -106,7 +98,7 @@ Message: ${formData.message}
               data-aos="zoom-in-left"
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
-              {contactInfo.map((item, index) => (
+              {orderInfo.map((item, index) => (
                 <a
                   key={index}
                   href={item.link}
@@ -177,16 +169,16 @@ Message: ${formData.message}
                   htmlFor="phone"
                   className="block text-sm font-medium text-green-950 mb-2"
                 >
-                  Phone
+                  Subject
                 </label>
                 <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
                   onChange={handleChange}
                   className="w-full px-4 py-3 text-black bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800 focus:border-transparent transition-all"
-                  placeholder="+234 000 000 0000"
+                  placeholder="request subject"
                 />
               </div>
 
@@ -214,7 +206,7 @@ Message: ${formData.message}
                 onClick={handleSubmit}
                 className="w-full sm:w-auto px-8 py-3 bg-green-800 text-white font-semibold rounded-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
               >
-                SEND VIA WHATSAPP
+                SEND MESSAGE
               </button>
             </div>
           </div>
