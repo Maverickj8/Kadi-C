@@ -93,7 +93,7 @@ export default function OurTeamPage() {
           {/* Header Label */}
           <div className="mb-6 sm:mb-8">
             <p className="text-gray-800 text-xs sm:text-sm font-semibold tracking-wider uppercase">
-              OUR TEAM
+              OUR VISION & MISSION
             </p>
           </div>
 
@@ -104,9 +104,9 @@ export default function OurTeamPage() {
               {/* Heading */}
               <div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight mb-4 sm:mb-6">
-                  Alone We can Do So Little,
+                  Kadi C Farms Limited,
                   <br />
-                  Together We Can Do So Much.
+                  established in 2024.
                 </h1>
                 <div className="w-16 h-1 bg-black"></div>
               </div>
@@ -144,20 +144,28 @@ export default function OurTeamPage() {
               {/* Description Paragraphs */}
               <div className="space-y-4 sm:space-y-5 text-sm sm:text-base lg:text-base leading-relaxed">
                 <p className="text-gray-900">
-                  Our experienced leadership team brings together over 50 years
-                  of combined experience in agriculture, international trade,
-                  and business management. The team includes industry experts in
-                  organic farming, quality control specialists, and
-                  international trade professionals,
+                  {" "}
+                  <span className="font-semibold">MISSION</span> <br />
+                  To be a leading provider of high-quality, organic agro produce
+                  for the global market, contributing to a healthier and more
+                  sustainable future. We achieve this through ethical farming
+                  practices, rigorous quality control, and commitment to
+                  environmental stewardship. Our mission extends beyond mere
+                  production to include education about sustainable farming
+                  practices, support for local farming communities, and
+                  promotion of organic agriculture benefits worldwide.
                 </p>
                 <p className="text-gray-900">
-                  ensuring comprehensive oversight of all operations. Our
-                  leadership team brings extensive expertise in sustainable
-                  agriculture, international trade, and organic food production
-                  to deliver premium products with uncompromising standards.
-                  Together, this team drives our position as a global leader in
-                  sustainable organic agriculture while upholding our core
-                  values.
+                  {" "}
+                  <span className="font-semibold">VISION</span> <br />A world
+                  where consumers have access to authentic, traceable, and
+                  nutritious organic food, cultivated in harmony with nature. We
+                  envision a future where sustainable agriculture supports both
+                  environmental conservation and economic growth. This vision
+                  encompasses creating a global network of responsible farming
+                  practices, establishing new standards in organic production,
+                  and fostering a deep connection between consumers and the
+                  source of their food.
                 </p>
               </div>
 
